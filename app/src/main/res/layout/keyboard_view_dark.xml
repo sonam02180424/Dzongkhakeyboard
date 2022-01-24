@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ddc.dzongkhakeyboard.DzongkhaKeyboardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/keyboard_view1"
+    android:keyBackground="@drawable/key_bg_black"
+    android:keyPreviewLayout="@null"
+    android:background="@drawable/keyboard_bg_black"
+    android:keyTextSize="@dimen/keyTextSize"
+    android:shadowRadius="0.0"
+
+
+    android:layout_alignParentBottom="true">
+
+</com.ddc.dzongkhakeyboard.DzongkhaKeyboardView>

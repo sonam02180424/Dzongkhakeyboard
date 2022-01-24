@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Keyboardtheme"
+    android:background="@color/bg"
+    >
+    <ImageView
+        android:id="@+id/imageactiontheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_backarr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/actiontext"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="10dp"
+        android:paddingLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/actiontext"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/orange"
+        android:fontFamily="@font/ddc_uchen"
+        android:paddingLeft="60dp"
+        android:paddingTop="10dp"
+        android:text="ལྡེ་སྒྲོབ་ཀྱི་དཔེ་གཞི།"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="8dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/theme_light_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EBEBEB"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actiontext"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/theme_light"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/theme_light" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:background="@color/darkorange"
+            android:fontFamily="@font/source_serif_pro"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="དཔེ་གཞི་སྐྱ་བོ།"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/theme_dark_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#181818"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/theme_light_layout"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/theme_dark"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/theme_dark"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:background="@color/darkorange"
+            android:fontFamily="@font/source_serif_pro"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="དཔེ་གཞི་གནགཔོ།"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

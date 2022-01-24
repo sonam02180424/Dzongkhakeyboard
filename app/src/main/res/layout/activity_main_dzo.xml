@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_dzo"
+    android:background="@color/bg">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/bottom_navigation"
+        android:background="@color/darkorange"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/button_menu_dzo"
+        app:itemIconSize="28dp"
+        android:theme="@style/navButton_dzo"/>
+
+
+
+    <TextView
+        android:id="@+id/actiontext"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/orange"
+        android:fontFamily="@font/ddc_uchen"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:text="རྫོང་ཁའི་ལྡེ་སྒྲོམ།"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="8dp"
+        />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="145dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="8dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actiontext"
+        app:srcCompat="@drawable/logo" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:fontFamily="@font/source_serif_pro"
+        android:text="English"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        android:theme="@style/SCBSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="39dp"
+        android:layout_height="22dp"
+        android:fontFamily="@font/ddc_uchen"
+        android:text="རྫོང་ཁ།"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toEndOf="@+id/switch1"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/setting"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="@color/orange"
+        android:drawableLeft="@drawable/ic_setting1"
+        android:fontFamily="@font/ddc_uchen"
+        android:paddingLeft="10dp"
+        android:text="རིམ་སྒྲིག།"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/edit_button"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="@color/orange"
+        android:drawableLeft="@drawable/ic_edit1"
+        android:fontFamily="@font/ddc_uchen"
+        android:paddingLeft="10dp"
+        android:text="རྫོང་ཁའི་ལྡེ་སྒྲོམ་གདམ་ཁ་རྐྱབ།
+"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/keyboard_button"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/keyboard_button"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="@color/orange"
+        android:drawableLeft="@drawable/ic_keyboard1"
+        android:fontFamily="@font/ddc_uchen"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:text=" རྫོང་ཁའི་ལྡེ་སྒྲོབ་བཏུབ་བཟོ།"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/ddc_uchen"
+        android:text="@string/setup1"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setting" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

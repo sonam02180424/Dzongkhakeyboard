@@ -1,3 +1,32 @@
 <resources>
-    <string name="app_name">Dzongkha keyboard</string>
+    <string name="app_name">Dzongkha Keyboard</string>
+    <string name="app_name1">རྫོང་ཁའི་ལྡེ་སྒྲོམ།</string>
+    <string name="author_name">Supported by</string>
+    <string name="author_name1">Dzongkha Development Commission</string>
+    <string name="setup">Please enable the Dzongkha Keyboard first, then\n choose Dzongkha Keyboard.</string>
+    <string name="aboutus">Typing will be a breeze with Dzongkha <br /> Keyboard for android, which has the <br /> same layout as Dzongkha Keyboard <br /> for Windows and MacOS. </string>
+    <string name="aboutus1">The app was developed by final year <br />students of College of Science and <br />Technology with support from Dzongkha<br /> Development Comission </string>
+    <string name="aboutus2">1. Kezang Sherab  \n<br />
+        2. Mani Kumar Gajmer \n<br />
+    3. Rinchen Wangdi \n<br />
+    4. Yeshi Jamtsho (Guide)\n</string>
+
+    <string name="setting1">Design &amp; UI</string>
+    <string name="setting2">Sound &amp; Control</string>
+
+    <string name="setup1">ཧེ་མ་ར་རྫོང་ཁའི་ ལྡེ་སྒྲོམ་འདི་ལཱ་འབད་བཏུབ་བཟོ། དེ་ལས་རྫོང་ཁའི་\n ལྡེ་སྒྲོམ་གདམ་ཁ་རྐྱབ།
+</string>
+    <string name="aboutusdzo">ཝིན་དྲོསི་དང་ མེཀ་ཨོ་ཨིསི་ནང་ལུ་ཡོད་པའི་རྫོང་ཁའི་ལྡེ་སྒྲོམ་གྱི་སྒྲིག་སྐད་དང་ཅོག་གཅིགཔ་ཡོད་པའི་ རྫོང་ཁའི་ལྡེ་སྒྲོམ་རིམ་ལུགས་ཀྱིས་ ཨེན་དྲའོཊ་གི་འགྲུལ་འཕྲིན་ཚུ་ནང་ རྫོང་ཁ་འཇམ་ཏོང་ཏོ་སྦེ་མཛུབ་གནོན་རྐྱབ་ཚུགསཔ་བཟོཝ་ཨིན།
+    </string>
+    <string name="aboutus1dzo">རིམ་ལུགས་འདི་རྫོང་ཁ་གོང་འཕེལ་ལྷན་ཚོགས་ཀྱིས་ རྒྱབ་སྐྱོར་ཐོག་ལས་རིན་ཆེན་ལྡིང་ལུ་ཡོད་པའི་ཚན་རིག་དང་འཕྲུལ་རིག་མཐོ་རིམ་སློབ་གྲྭའི་ལོ་མཇུག་གི་སློབ་འཕྲུག་ཚུ་གིས་བཟོ་ཡོདཔ་ཨིན།
+    </string>
+    <string name="setting1_dzo">བཟོ་རྣམ།</string>
+    <string name="setting2_dzo"> སྒྲ་སྐད་དང་ཚད་འཛིན།</string>
+
+    <string name="aboutus2_dzo">༡) སྐལ་བཟང་ཤེས་རབ།  \n<br />
+        ༢) མནི་ཀུ་མར་གཇ་མིར། \n<br />
+   ༣) རིན་ཆེན་དབང་འདུས། \n<br />
+    ༤) ཡེ་ཤེས་རྒྱ་མཚོ། (ལམ་སྟོན་པ།)\n</string>
+
+
 </resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="12.5%p"
+    android:horizontalGap="0px"
+    android:verticalGap="0px"
+    android:keyHeight="50dp">
+
+    <Row android:verticalGap="10dp"
+        android:keyHeight = "40dp">
+        <Key  android:keyIcon="@drawable/ic_emoji" android:keyWidth="25%p" android:keyEdgeFlags="left" android:codes="-26"/>
+        <Key   android:keyIcon="@drawable/ic_baseline_keyboard_24" android:keyWidth="25%p" android:codes="-22"/>
+        <Key  android:keyIcon="@drawable/ic_settings" android:keyWidth="25%p"  android:codes="-23"/>
+        <Key  android:keyIcon="@drawable/ic_hide" android:keyWidth="25%p" android:keyEdgeFlags="right" android:codes="-24"/>
+
+    </Row >
+
+    <Row>
+        <Key android:keyLabel="😂 " android:keyEdgeFlags="left" android:codes="-31"/>
+        <Key android:keyLabel="🤔" android:codes="-32"/>
+        <Key android:keyLabel="😅" android:codes="-33"/>
+        <Key android:keyLabel="😆" android:codes="-34"/>
+        <Key android:keyLabel="😢" android:codes="-35"/>
+        <Key android:keyLabel="😎" android:codes="-36"/>
+
+        <Key android:keyLabel="🙏" android:codes="-41"/>
+        <Key android:keyLabel="👍" android:keyEdgeFlags="right" android:codes="-42"/>
+    </Row>
+    <Row>
+        <Key android:keyLabel="👺" android:keyEdgeFlags="left" android:codes="-39"/>
+        <Key android:keyLabel="👿" android:codes="-40"/>
+
+        <Key android:keyLabel="🐶" android:codes="-45"/>
+        <Key android:keyLabel="❤️" android:codes="-46"/>
+        <Key android:keyLabel="💚" android:codes="-47"/>
+        <Key android:keyLabel="💔" android:codes="-48"/>
+        <Key android:keyLabel="💓" android:codes="-49"/>
+        <Key android:keyLabel="🔥" android:keyEdgeFlags="right" android:codes="-50"/>
+    </Row>
+
+    <!--    <Row>-->
+    <!--        <Key android:keyLabel="°" android:keyEdgeFlags="left" android:codes="176"/>-->
+    <!--        <Key android:keyLabel="•" android:codes="8226"/>-->
+    <!--        <Key android:keyLabel="○" android:codes="9675"/>-->
+    <!--        <Key android:keyLabel="●" android:codes="9679"/>-->
+    <!--        <Key android:keyLabel="□" android:codes="9633"/>-->
+    <!--        <Key android:keyLabel="■" android:codes="9632"/>-->
+    <!--        <Key android:keyLabel="♤" android:codes="9828"/>-->
+    <!--        <Key android:keyLabel="♡" android:codes="9825"/>-->
+    <!--        <Key android:keyLabel="◇" android:codes="9671"/>-->
+    <!--        <Key android:keyLabel="♧" android:keyEdgeFlags="right" android:codes="9831"/>-->
+    <!--    </Row>-->
+
+    <Row>
+
+        <Key android:keyLabel="😺" android:codes="-51" android:keyEdgeFlags="left"/>
+        <Key android:keyLabel="🎃" android:codes="-52"/>
+        <Key android:keyLabel="😉" android:codes="-53"/>
+        <Key android:keyLabel="😘" android:codes="-54"/>
+        <Key android:keyLabel="🇧🇹" android:codes="-55"/>
+        <Key android:keyLabel="🎂" android:codes="-56"/>
+        <Key android:keyLabel="👏" android:codes="-57"/>
+        <Key android:keyLabel="😃"   android:codes="-59" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row android:rowEdgeFlags="bottom">
+        <Key android:keyLabel="💩"  android:keyEdgeFlags="left" android:codes="-58"/>
+
+        <Key android:keyLabel="😡" android:codes="-37"/>
+        <Key android:keyLabel="😴" android:codes="-38"/>
+        <Key android:keyLabel="💋" android:codes="-43"/>
+        <Key android:keyLabel="👀" android:codes="-44"/>
+        <Key android:keyLabel="👌" android:codes="-60"/>
+        <Key android:keyLabel="😭" android:codes="-61"/>
+        <Key android:keyIcon="@drawable/ic_baseline_backspace_24"   android:isRepeatable="true" android:codes="-70"/>
+    </Row>
+
+
+</Keyboard>
