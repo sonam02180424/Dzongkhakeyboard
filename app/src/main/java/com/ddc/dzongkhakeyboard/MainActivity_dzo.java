@@ -7,8 +7,10 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -28,10 +30,13 @@ public class MainActivity_dzo extends AppCompatActivity implements
     Button addkeyboards;
     Button setting;
     private Switch bSwitch;
+    SharedPreferences sharedPreferences;
+    private static final String DEFAULT_KEYBOARD = "default_keyboard";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_dzo);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
 
         enableSetting = findViewById(R.id.keyboard_button);
@@ -50,6 +55,7 @@ public class MainActivity_dzo extends AppCompatActivity implements
         setting.setOnClickListener(this);
 
         bSwitch =findViewById(R.id.switch1);
+        bSwitch.setChecked(sharedPreferences.getBoolean(DEFAULT_KEYBOARD,true));
         bSwitch.setOnCheckedChangeListener(this);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -98,13 +104,17 @@ public class MainActivity_dzo extends AppCompatActivity implements
     }
 
 
+
     @Override
     public void onCheckedChanged (CompoundButton buttonView,boolean isChecked) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         switch (buttonView.getId()) {
             case R.id.switch1:
                 if (isChecked)
                     return;
                 else
+                    editor.putBoolean(DEFAULT_KEYBOARD,isChecked);
+                editor.apply();
                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
                     overridePendingTransition(0,0);
                 finish();

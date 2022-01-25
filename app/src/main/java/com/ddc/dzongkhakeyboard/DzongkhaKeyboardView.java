@@ -47,6 +47,7 @@ public class DzongkhaKeyboardView extends KeyboardView {
 
         paint.setTextAlign(Paint.Align.CENTER);
         paint.setTextSize(getResources().getDimension(R.dimen.canvasTextSize));
+
         paint.setColor(getResources().getColor(R.color.popupKeyColor));
         paint2.setColor(getResources().getColor(R.color.white200));
 
@@ -55,7 +56,7 @@ public class DzongkhaKeyboardView extends KeyboardView {
         List<Keyboard.Key> keys = getKeyboard().getKeys();
         for (Keyboard.Key key : keys) {
             if (key.label != null) {
-
+// drawing the superscript characters on english keyboard;
                 if (key.label.toString().equals("q") || key.label.toString().equals("Q") )
                     canvas.drawText("+", key.x + (key.width*7)/10 , key.y + (key.height*3)/8, paint);
 
@@ -138,11 +139,8 @@ public class DzongkhaKeyboardView extends KeyboardView {
 
             }
 
-//            else{
-//                Drawable dr = (Drawable)this.getResources().getDrawable(R.drawable.key_shift_light_background);
-//                dr.setBounds(key.x, key.y, key.x + key.width, key.y + key.height);
-//                dr.draw(canvas);
 
+// drawing the drawing icons on the menu keys ;
             if(key.codes[0] == -4 ||key.codes[0] == -12 ||key.codes[0] == -5 ||key.codes[0]==-17||key.codes[0]==-9||key.codes[0]==-14||key.codes[0]==-15||key.codes[0]==-16||key.codes[0]==-18){
                if(theme==0){
                    Drawable dr = (Drawable) this.getResources().getDrawable(R.drawable.function_keys_bg);
@@ -289,7 +287,7 @@ public class DzongkhaKeyboardView extends KeyboardView {
     @Override
     protected boolean onLongPress(Keyboard.Key key) {
 
-        // For English keyboard.
+        // For English keyboard long press action;
 
         if (key.codes[0] == 'q' || key.codes[0] == 'Q' ) {
             getOnKeyboardActionListener().onKey('+', null);

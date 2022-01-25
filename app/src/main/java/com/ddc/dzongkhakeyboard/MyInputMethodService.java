@@ -37,12 +37,15 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     float SOUND_VOLUME = 100.0F;
     private boolean sym1;
     private boolean sym2;
-
     private String THEME_KEY = "theme_key";
     private static final String SOUND_KEY = "sound_key";
     private static final String VIBRATION_KEY = "vibration_key";
+    private static final String DEFAULT_KEYBOARD = "default_keyboard";
+    // when default keyboard is true it means to make dzongkha as default keyboard
+    // when the keyboard is opened for the first time;
     private boolean vibrate;
     private boolean sound;
+    private boolean changeShift;
 
 
     int [] THEMES = {
@@ -63,6 +66,9 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        sym1 = false;
+        sym2 = false;
+        changeShift = true;
 
 
     }
@@ -80,19 +86,16 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
         engSym2 = new Keyboard(this, R.xml.eng_symbol2);
         keypad = new Keyboard(this,R.xml.keypad);
         emoji = new Keyboard(this,R.xml.emoji);
+        // this is the initialization of all the keyboard layouts that has been created in xml folder;
 
     }
     @Override public View onCreateInputView() {
         sound = sharedPreferences.getBoolean(SOUND_KEY, false);
         vibrate = sharedPreferences.getBoolean(VIBRATION_KEY,false);
+
         keyboardView = (DzongkhaKeyboardView) getLayoutInflater().inflate(THEMES[sharedPreferences.getInt(THEME_KEY, 0)], null);
+        // initialization of keyboard theme from shared preference;
 
-
-        keyboard = dzongkha_keyboard_normal;
-        keyboardView.setKeyboard(keyboard);
-        dzo = true;
-        sym1 = false;
-        sym2 = false;
         keyboardView.setOnKeyboardActionListener(this);
         return keyboardView;
     }
@@ -103,13 +106,27 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
         // Restart the InputView to apply right theme selected.
         setInputView(onCreateInputView());
 
-        switch (attribute.inputType & InputType.TYPE_MASK_CLASS) {
+        switch (attribute.inputType & InputType.TYPE_MASK_CLASS) {// selecting keyboard layout based on the typeclass
             case InputType.TYPE_CLASS_NUMBER:
                 keyboard = keypad;
                 keyboardView.setKeyboard(keyboard);
+                changeShift = false;
                 break;
             default:
-                keyboard = dzongkha_keyboard_normal;
+                if(sharedPreferences.getBoolean(DEFAULT_KEYBOARD,false)){
+                    keyboard = dzongkha_keyboard_normal;
+                    dzo = true;
+                    shift = false;
+
+                }
+                else{
+                    keyboard = english_keyboard_shift;
+                    shift = true;
+                    dzo = false;
+
+                }
+                changeShift = true;
+
                 keyboardView.setKeyboard(keyboard);
         }
     }
@@ -117,7 +134,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
            if(keyCode == KeyEvent.KEYCODE_ENTER){
-               return false;
+               return false;// let underlying class handle the enter key
            }
 
 
@@ -129,12 +146,23 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     }
 
     @Override
-    public void onPress(int primaryCode) {
+    public void onPress(int primaryCode) {// removing keypreview from function and menu keys;
+        if(primaryCode == -5||primaryCode == -21||primaryCode == -22||primaryCode == -23||primaryCode == -24||primaryCode == -12||primaryCode == -14||
+                primaryCode == -11||primaryCode == -4||primaryCode == -26||primaryCode == -70||primaryCode == -16||primaryCode == 32||
+                primaryCode == -18||primaryCode == -17||primaryCode == -9||primaryCode == -15){
+            keyboardView.setPreviewEnabled(false);
+
+        }
+        else{
+            keyboardView.setPreviewEnabled(true);
+        }
+
 
     }
 
     @Override
     public void onRelease(int primaryCode) {
+
 
     }
 
@@ -143,12 +171,14 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     @RequiresApi(api = Build.VERSION_CODES.S)
     @Override
     public void onKey(int primaryCode, int[] keyCodes) {
-        if(vibrate){
-            v.vibrate(30);
+        if(primaryCode!=-5 && primaryCode!=32 && primaryCode != -70){//removing sound and vibration from backspace emoji backspace and space keys
+            if(vibrate){
+                v.vibrate(30);
 
-        }
-        if(sound){
-           am.playSoundEffect(AudioManager.FX_KEYPRESS_STANDARD,SOUND_VOLUME);
+            }
+            if(sound){
+                am.playSoundEffect(AudioManager.FX_KEYPRESS_STANDARD,SOUND_VOLUME);
+            }
         }
 
 
@@ -187,10 +217,23 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
 
                     break;
                 case -23:
-                    Intent dialogIntent2 = new Intent(this, Setting.class);
-                    dialogIntent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(dialogIntent2);
-                    break;
+                    if(sharedPreferences.getBoolean(DEFAULT_KEYBOARD,false)){
+                        Intent dialogIntent2 = new Intent(this, Setting_dzo.class);
+                        dialogIntent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(dialogIntent2);
+
+                        break;
+
+                    }
+                    else{
+                        Intent dialogIntent2 = new Intent(this, Setting.class);
+                        dialogIntent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(dialogIntent2);
+                        break;
+
+                    }
+
+
                 case -24:
                     requestHideSelf(0);
                     break;
@@ -379,45 +422,27 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
             }
         }
 
-    public void clearShiftMode(){
-        if(shift){
-            if(dzo){
-                keyboard = dzongkha_keyboard_normal;
+    public void clearShiftMode(){// clear shift mode after one character is typed
+        if(changeShift){
+            if(shift){
+                if(dzo){
+                    keyboard = dzongkha_keyboard_normal;
 
-                keyboardView.setKeyboard(keyboard);
+                    keyboardView.setKeyboard(keyboard);
 
+                }
+                else{
+
+                    keyboard = english_keyboard_normal;
+                    keyboardView.setKeyboard(keyboard);
+                    dzo=false;
+
+                }
+                shift = false;
             }
-            else{
-
-                keyboard = english_keyboard_normal;
-                keyboardView.setKeyboard(keyboard);
-                dzo=false;
-
-            }
-            shift = false;
         }
     }
 
-//    private AudioManager am;
-//    private Vibrator v;
-//    private void playSound(){
-//
-//        v.vibrate(10);
-//        am = (AudioManager)getSystemService(AUDIO_SERVICE);
-//        switch(keyCode){
-//            case 32:
-//                am.playSoundEffect(AudioManager.FX_KEYPRESS_SPACEBAR);
-//                break;
-//            case Keyboard.KEYCODE_DONE:
-//            case 10:
-//                am.playSoundEffect(AudioManager.FX_KEYPRESS_RETURN);
-//                break;
-//            case Keyboard.KEYCODE_DELETE:
-//                am.playSoundEffect(AudioManager.FX_KEYPRESS_DELETE);
-//                break;
-//            default: am.playSoundEffect(AudioManager.FX_KEYPRESS_STANDARD);
-//        }
-//    }
 
     @Override
     public void onText(CharSequence text) {

@@ -2,10 +2,11 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="20dp" android:layout_height="20dp"
 
-    android:background="@drawable/key_bg_light"
-    android:textColor="@color/dark"
+    android:background="@drawable/key_bg_black"
+    android:textColor="@color/key_color"
     android:textAlignment="center"
     android:layout_marginBottom="0dp"
     android:textSize="30sp"> <!--Color and size of Preview when key is pressed.-->
+
 
 </TextView>

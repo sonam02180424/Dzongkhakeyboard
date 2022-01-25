@@ -2,7 +2,7 @@
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
     android:keyWidth="10%p"
     android:horizontalGap="0px"
-    android:verticalGap="0px"
+    android:verticalGap="10dp"
     android:keyHeight="50dp">
 
     <Row android:verticalGap="10dp"
@@ -64,7 +64,7 @@
     </Row>
 
     <Row>
-        <Key  android:keyIcon="@drawable/ic_shift" android:keyWidth="15%p" android:keyEdgeFlags="left" android:codes="-12"/>
+        <Key  android:keyIcon="@drawable/ic_shift_active" android:keyWidth="15%p" android:keyEdgeFlags="left" android:codes="-12"/>
         <Key android:keyLabel="Z" android:codes="00090"/>
         <Key android:keyLabel="X" android:codes="00088"/>
         <Key android:keyLabel="C" android:codes="00067"/>
@@ -76,12 +76,16 @@
     </Row>
 
     <Row android:rowEdgeFlags="bottom">
-        <Key android:keyLabel="123" android:keyWidth="15%p" android:keyEdgeFlags="left" android:codes="-17"/>
-        <Key android:keyLabel="ཀཁག" android:keyWidth="10%p"  android:codes="-11"/>
+        <Key android:keyLabel="!#1" android:keyWidth="15%p" android:keyEdgeFlags="left" android:codes="-17"/>
+        <Key android:keyIcon="@drawable/ic_language" android:keyWidth="10%p"  android:codes="-11"/>
         <Key android:keyLabel="   " android:keyWidth="40%p" android:isRepeatable="true" android:codes="32"/>
         <Key android:keyLabel="." android:keyWidth="10%p" android:codes="46"/>
         <Key android:keyLabel="," android:keyWidth="10%p" android:codes="00044"/>
         <Key android:keyIcon="@drawable/ic_baseline_keyboard_return_24" android:keyWidth="15%p" android:keyEdgeFlags="right" android:codes="-4"/>
+
+    </Row>
+    <Row
+        android:keyHeight = "0dp">
 
     </Row>
 

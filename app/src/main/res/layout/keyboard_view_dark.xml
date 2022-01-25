@@ -4,10 +4,11 @@
     android:layout_height="match_parent"
     android:id="@+id/keyboard_view1"
     android:keyBackground="@drawable/key_bg_black"
-    android:keyPreviewLayout="@null"
+    android:keyPreviewLayout="@layout/keyboard_preview_dark"
     android:background="@drawable/keyboard_bg_black"
     android:keyTextSize="@dimen/keyTextSize"
     android:shadowRadius="0.0"
+
 
 
     android:layout_alignParentBottom="true">

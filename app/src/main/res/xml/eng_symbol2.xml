@@ -2,7 +2,7 @@
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
     android:keyWidth="10%p"
     android:horizontalGap="0px"
-    android:verticalGap="0px"
+    android:verticalGap="10dp"
     android:keyHeight="50dp">
 
     <Row android:verticalGap="10dp"
@@ -66,11 +66,15 @@
 
     <Row android:rowEdgeFlags="bottom">
         <Key android:keyLabel="ABC" android:keyWidth="15%p" android:keyEdgeFlags="left" android:codes="-16"/>
-        <Key android:keyLabel="ཀཁག" android:keyWidth="10%p"  android:codes="-11"/>
+        <Key  android:keyIcon="@drawable/ic_language" android:keyWidth="10%p"  android:codes="-11"/>
         <Key android:keyLabel="   " android:keyWidth="40%p" android:isRepeatable="true" android:codes="32"/>
         <Key android:keyLabel="." android:keyWidth="10%p" android:codes="46"/>
         <Key android:keyLabel="," android:keyWidth="10%p" android:codes="00044"/>
         <Key android:keyIcon="@drawable/ic_baseline_keyboard_return_24" android:keyWidth="15%p" android:keyEdgeFlags="right" android:codes="-4"/>
+
+    </Row>
+    <Row
+        android:keyHeight = "0dp">
 
     </Row>
 

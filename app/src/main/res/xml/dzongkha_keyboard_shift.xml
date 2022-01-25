@@ -2,37 +2,16 @@
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
     android:keyWidth="8.333%p"
     android:horizontalGap="0px"
-    android:verticalGap="0px"
+    android:verticalGap="10dp"
     android:keyHeight="50dp">
-    <Row android:keyHeight = "40dp">
-        <Key android:keyLabel="༉"
-            android:keyEdgeFlags="left"
-            android:codes="3849"/>
+    <Row android:verticalGap="10dp"
+        android:keyHeight = "40dp">
+        <Key  android:keyIcon="@drawable/ic_emoji" android:keyWidth="25%p" android:keyEdgeFlags="left" android:codes="-21"/>
+        <Key   android:keyIcon="@drawable/ic_baseline_keyboard_24" android:keyWidth="25%p" android:codes="-22"/>
+        <Key  android:keyIcon="@drawable/ic_settings" android:keyWidth="25%p"  android:codes="-23"/>
+        <Key  android:keyIcon="@drawable/ic_hide" android:keyWidth="25%p" android:keyEdgeFlags="right" android:codes="-24"/>
 
-        <Key android:keyLabel="༡"
-            android:codes="3873"/>
-        <Key android:keyLabel="༢"
-            android:codes="3874"/>
-        <Key android:keyLabel="༣"
-            android:codes="3875"/>
-        <Key android:keyLabel="༤"
-            android:codes="3876"/>
-        <Key android:keyLabel="༥"
-            android:codes="3877"/>
-        <Key android:keyLabel="༦"
-            android:codes="3878"/>
-        <Key android:keyLabel="༧"
-            android:codes="3879"/>
-        <Key android:keyLabel="༨"
-            android:codes="3880"/>
-        <Key android:keyLabel="༩"
-            android:codes="3881"/>
-        <Key android:keyLabel="༠"
-            android:codes="3872"/>
-        <Key android:keyLabel="༔"
-            android:codes = "3860"
-            android:keyEdgeFlags="right"/>
-    </Row>
+    </Row >
     <Row >
         <Key android:keyLabel="ྐ" android:keyEdgeFlags="left" android:codes="03984"/>
         <Key android:keyLabel="ྑ" android:codes="03985"/>
@@ -71,7 +50,7 @@
     </Row>
 
     <Row >
-        <Key  android:keyIcon="@drawable/ic_baseline_arrow_upward_24" android:keyEdgeFlags="left" android:codes="-12"/>
+        <Key  android:keyIcon="@drawable/ic_shift_active" android:keyEdgeFlags="left" android:codes="-12"/>
 
 <!--        <Key android:keyLabel="ྲ" android:codes="04018"/>-->
 <!--        <Key android:keyLabel="ླ" android:codes="04019"/>-->
@@ -86,17 +65,21 @@
         <Key android:keyLabel="ྷ" android:codes="4023"/>
         <Key android:keyLabel="ྸ" android:codes="4024"/>
         <!-- <Key android:keyLabel="\? ! :" android:keyEdgeFlags="right" android:codes="63,33,58"/>-->
-        <Key android:keyIcon="@drawable/ic_baseline_keyboard_backspace_24"  android:isRepeatable="true" android:codes="-5"/>
+        <Key android:keyIcon="@drawable/ic_baseline_backspace_24"  android:isRepeatable="true" android:codes="-5"/>
     </Row>
 
     <Row android:rowEdgeFlags="bottom" >
         <Key android:keyLabel="༡༢༣" android:keyWidth="10%p" android:keyEdgeFlags="left" android:codes="-14"/>
-        <Key android:keyLabel="ABC" android:keyWidth="10%p"  android:codes="-11"/>
+        <Key  android:keyIcon="@drawable/ic_language"  android:keyWidth="10%p"  android:codes="-11"/>
         <Key android:keyLabel="་" android:keyWidth="10%p"  android:codes="03851"/>
         <Key android:keyLabel=" " android:keyWidth="40%p"  android:codes="32"/>
         <Key android:keyLabel="།" android:keyWidth="10%p"  android:codes="03853"/>
         <Key android:keyLabel="\?" android:keyWidth="10%p"  android:codes="63"/>
         <Key android:keyIcon="@drawable/ic_baseline_keyboard_return_24" android:keyWidth="10%p" android:keyEdgeFlags="right" android:codes="-4"/>
+    </Row>
+    <Row
+        android:keyHeight = "0dp">
+
     </Row>
 
 </Keyboard>

@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -23,6 +25,9 @@ public class MainActivity extends AppCompatActivity
     Button addkeyboards;
     Button setting;
     private Switch aSwitch;
+    SharedPreferences sharedPreferences;
+
+    private static final String DEFAULT_KEYBOARD = "default_keyboard";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         enableSetting = findViewById(R.id.keyboard_button);
         addkeyboards = findViewById(R.id.edit_button);
@@ -41,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         setting.setOnClickListener(this);
 
         aSwitch =findViewById(R.id.switch1);
+        aSwitch.setChecked(sharedPreferences.getBoolean(DEFAULT_KEYBOARD,false));
         aSwitch.setOnCheckedChangeListener(this);
 
 
@@ -91,9 +97,12 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onCheckedChanged (CompoundButton buttonView,boolean isChecked) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         switch (buttonView.getId()) {
             case R.id.switch1:
                 if (isChecked)
+                    editor.putBoolean(DEFAULT_KEYBOARD,isChecked);
+                editor.apply();
                     startActivity(new Intent(getApplicationContext(), MainActivity_dzo.class));
                 overridePendingTransition(0,0);
                 finish();
